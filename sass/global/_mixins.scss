@@ -1,0 +1,37 @@
+@mixin title {
+  display: block;
+  margin: 0 0 25px 0;
+  text-align: center;
+  font-family: $font-1-700;
+  font-weight: 700;
+  font-size: 30px;
+  color: #555;
+
+  @media (max-width: 479px) {
+    font-size: 24px;
+  }
+}
+
+@mixin subtitle {
+  display: block;
+  margin: 0 0 36px 0;
+  font-family: $font-1-300;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  line-height: 28px;
+  color: #555;
+
+  @media (max-width: 479px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@mixin dots {
+  background-image: url(../images/bg-dots.png);
+  background-position: bottom;
+  background-repeat: repeat-x;
+  margin-bottom: 50px;
+  padding-bottom: 40px;
+}

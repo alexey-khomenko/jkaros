@@ -1,0 +1,108 @@
+#blog {
+  @include dots;
+
+  h2 {
+    @include title;
+  }
+
+  .subtitle {
+    @include subtitle;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media (max-width: 689px) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    li {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-right: 15px;
+      margin-bottom: 32px;
+      flex-basis: 400px;
+      flex-grow: 1;
+
+      @media (max-width: 959px) {
+        flex-basis: 300px;
+      }
+
+      @media (max-width: 689px) {
+        margin-right: 0;
+        flex-basis: auto;
+      }
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+
+      .date {
+        display: block;
+        height: 55px;
+        width: 55px;
+        margin-right: 10px;
+        padding: 12px;
+        text-align: center;
+        font-family: $font-2;
+        color: #555;
+        background-color: #ECECEC;
+        border-radius: 50%;
+
+        .day {
+          font-size: 18px;
+        }
+
+        .month {
+          font-size: 14px;
+          text-transform: capitalize;
+        }
+      }
+
+      .text {
+        display: block;
+        flex-basis: 100px;
+        flex-grow: 1;
+
+        h3 {
+          display: block;
+          margin-bottom: 8px;
+          font-family: $font-1-700;
+          font-weight: 700;
+          font-size: 17px;
+          color: #555;
+        }
+
+        p {
+          display: block;
+          margin-bottom: 8px;
+          font-family: $font-2;
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 22px;
+          color: #555;
+        }
+
+        a {
+          display: inline-block;
+          font-family: $font-2;
+          font-weight: 400;
+          font-size: 11px;
+          color: #6b99b6;
+
+          &:hover {
+            color: #235576;
+          }
+        }
+      }
+    }
+  }
+}
