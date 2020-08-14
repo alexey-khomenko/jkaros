@@ -19,7 +19,6 @@ $(function () {
     // -----------------------------------------------------------------------------------------------------------------
     // Мобильное меню
     function mobileMenu(e) {
-
         var nav = $("#header nav"),
             ul_height = $("#header nav ul").outerHeight(true) + "px",
             old_height = parseInt(nav.css("max-height")),
@@ -29,6 +28,10 @@ $(function () {
             new_height = old_height > 0 ? 0 : ul_height;
         } else {
             new_height = old_height > 0 ? ul_height : 0;
+        }
+
+        if ($("a.bars").css("display") === "none") {
+            new_height = ul_height;
         }
 
         nav.css("max-height", new_height);
